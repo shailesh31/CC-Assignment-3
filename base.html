@@ -1,0 +1,72 @@
+<html>
+    <head>
+      <style>
+		.container {
+			position: relative;
+		}
+		.topright {
+			position: fixed;
+			top: 8px;
+			right: 16px;
+		}
+		</style>
+		<meta charset="utf-8"/>
+        <meta charset="utf-8"/>
+
+        {% block head%}
+            <title>
+                {% block title %}
+                {% endblock %}
+            </title>
+        {% endblock %}
+    </head>
+    <body>
+        <div>
+            {% if user %}
+
+                    <button><a class="navbar-brand" href="/">Home</a></button>
+                    <button><a class="btn btn-outline-light" href="/search-user">Seach User</a></button>
+                    <button><a class="btn btn-outline-light" href="/search-content">Search Content</a></button>
+                    </div>
+
+                    <div>
+                        {% if username: %}
+                            <button><a class="btn btn-outline-light" href="/profile">Profile</a></button>
+                        {% endif %}
+                        <div class="container">
+                          <div class="topright"><button class="button button-block"/><a href="{{url}}">Log Out</a> </button>({{user}})</div>
+                        </div>
+
+                    </div>
+                </nav>
+            {% else %}
+
+                <div class="container">
+                    <div>
+                      <form action="/" method="post">
+                        <div class="container">
+                          <div class="topright"><button class="button button-block"/><a href="{{url}}">Log In</a> </button></div>
+                        </div>
+
+                    </div>
+                    <div class="form">
+              		<div class="tab-content">
+              		 <div id="signup">
+                     <center><h1>GRIFFITH COLLEGE</h1></center>
+                     <center><h1>SHAILESH SHARMA</h1></center>
+                     <center><h1>STUDENT ID: 2999539</h1></center>
+                     <center><h1>MSCBD:CLOUD COMPUTING</h1></center>
+                     <center><h1>A03: TWITTER Application</h1></centre>
+              			 <form action="" method="post">
+              			 </form>
+              		 </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="container">
+            {% if user %}
+                {% block body %}{% endblock %}
+            {% endif %}
+        </div>
+    </body>
+</html>
