@@ -32,14 +32,14 @@ class Home(webapp2.RequestHandler):
                 template_values['upload_url'] = blobstore.create_upload_url('/upload')
                 template = JINJA_ENVIRONMENT.get_template('templates/home.html')
                 self.response.write(template.render(template_values))
-                
+
     def post(self):
         action = self.request.get('button')
-        if (action.lower()) == 'Delete':
+        if (action.lower()) == 'delete':
              tweet_id = int(self.request.get('tweet_id'))
              ndb.Key(TweetsModel, tweet_id).delete()
              self.redirect('/home')
-                
+
     def getTweets(self, username):
         user_list = [username]
         PAGE_SIZE = 50
