@@ -35,7 +35,6 @@ class Home(webapp2.RequestHandler):
                 
     def post(self):
         action = self.request.get('button')
-        print('action={}'.format(action))
         if (action.lower()) == 'Delete':
              tweet_id = int(self.request.get('tweet_id'))
              ndb.Key(TweetsModel, tweet_id).delete()
