@@ -62,7 +62,7 @@ class Register(webapp2.RequestHandler):
                                 userModel.put()
                                 self.redirect('/')
                         else:
-                            err_msg = 'This username is already taken.'
+                            err_msg = 'This username is already existed.'
                     else:
                         err_msg = 'You can not change the user name.'
                 template_values['err_msg'] = err_msg
